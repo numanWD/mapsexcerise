@@ -1,7 +1,33 @@
 package main
 
+import (
+	"fmt"
+)
+
 func main() {
-	// Implment your solution here
+
+	fmt.Println("== Employees 5th Floor ==")
+	for name, details := range People {
+		if details.floor == 5 {
+			fmt.Println(name)
+
+		}
+	}
+
+	fmt.Println("== Employees Chalie Manager ==")
+	for name, details := range People {
+		if details.manager == "Charlie" {
+			fmt.Println(name)
+		}
+	}
+
+	fmt.Println("== Employees Works in Product ==")
+	for name, details := range People {
+		if details.dept == "Product" {
+			fmt.Println(name)
+		}
+	}
+
 }
 
 type details struct {
@@ -14,7 +40,7 @@ type details struct {
 var People = map[string]details{
 	"charlie": details{
 		age:     22,
-		dept:    "development",
+		dept:    "Development",
 		manager: "Fraser",
 		floor:   5,
 	},

@@ -2,32 +2,43 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
 
 func main() {
+	fmt.Println(charliesTeam())
+	fmt.Println(peopleOnFloorFive())
+	fmt.Println(peopleWorkingInProduct())
+}
 
-	fmt.Println("== Employees 5th Floor ==")
-	for name, details := range People {
-		if details.floor == 5 {
-			fmt.Println(name)
-
+func charliesTeam() []string {
+	charliesteam := make([]string, 0)
+	for name, dets := range People {
+		if strings.ToLower(dets.manager) == "charlie" {
+			charliesteam = append(charliesteam, name)
 		}
 	}
+	return charliesteam
+}
 
-	fmt.Println("== Employees Chalie Manager ==")
-	for name, details := range People {
-		if details.manager == "Charlie" {
-			fmt.Println(name)
+func peopleOnFloorFive() []string {
+	fifthfloor := make([]string, 0)
+	for name, dets := range People {
+		if dets.floor == 5 {
+			fifthfloor = append(fifthfloor, name)
 		}
 	}
+	return fifthfloor
+}
 
-	fmt.Println("== Employees Works in Product ==")
-	for name, details := range People {
-		if details.dept == "Product" {
-			fmt.Println(name)
+func peopleWorkingInProduct() []string {
+	productowners := make([]string, 0)
+	for name, dets := range People {
+		if strings.ToLower(dets.dept) == "product" {
+			productowners = append(productowners, name)
 		}
 	}
-
+	return productowners
 }
 
 type details struct {
@@ -40,7 +51,7 @@ type details struct {
 var People = map[string]details{
 	"charlie": details{
 		age:     22,
-		dept:    "Development",
+		dept:    "development",
 		manager: "Fraser",
 		floor:   5,
 	},

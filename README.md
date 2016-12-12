@@ -1,8 +1,10 @@
 # Go Excercise
 
 ## Lesson 3
-- Concurrency excerise
 
+- Concurrency excerise
+- Change the program to call the 3 "people" methods in a concurrent fashion
+- Print the results of these calls to the terminal
 
 ## Lesson 2
 

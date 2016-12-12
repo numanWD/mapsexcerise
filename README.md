@@ -1,5 +1,9 @@
 # Go Excercise
 
+## Lesson 3
+- Concurrency excerise
+
+
 ## Lesson 2
 
 - Put your tests in file called main_test.go in the same directory as your original main file

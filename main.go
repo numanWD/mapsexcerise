@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
+<<<<<<< HEAD
 	fmt.Println(charliesTeam())
 	fmt.Println(peopleOnFloorFive())
 	fmt.Println(peopleWorkingInProduct())
@@ -104,3 +105,6 @@ var People = map[string]details{
 		floor:   3,
 	},
 }
+=======
+}
+>>>>>>> 0521ad940fa84ba2b0d4c8251acec5472b85836c

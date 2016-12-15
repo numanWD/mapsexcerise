@@ -2,7 +2,7 @@ package people
 
 import "strings"
 
-func CharliesTeam() []string {
+func CharliesTeam(c chan []string) {
 	charliesteam := make([]string, 0)
 	for name, dets := range People {
 		if strings.ToLower(dets.manager) == "charlie" {
@@ -12,7 +12,7 @@ func CharliesTeam() []string {
 	c <- charliesteam
 }
 
-func PeopleOnFloorFive() []string {
+func PeopleOnFloorFive(c chan []string) {
 	fifthfloor := make([]string, 0)
 	for name, dets := range People {
 		if dets.floor == 5 {
@@ -22,7 +22,7 @@ func PeopleOnFloorFive() []string {
 	c <- fifthfloor
 }
 
-func PeopleWorkingInProduct() []string {
+func PeopleWorkingInProduct(c chan []string) {
 	productowners := make([]string, 0)
 	for name, dets := range People {
 		if strings.ToLower(dets.dept) == "product" {
